@@ -1,0 +1,188 @@
+.container-fluid {
+    padding-top: 5em;
+}
+
+.card-deck {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 20px 0;
+}
+
+.card {
+    background: none;
+    color: white;
+    width: 90rem;
+}
+
+.card-text {
+    font-size: 150%;
+}
+
+.movie {
+    width: 34rem;
+}
+
+.vs {
+    width: 15rem;
+}
+
+.categoryChoose {
+    color: white; 
+    font-weight: bold; 
+    font-size: 1.5em;
+}
+
+.card-title {
+    padding-left: 20px 0px;
+    font-weight: bold;
+    color: white;
+    font-size: 300%;
+}
+
+.card-vote {
+    font-weight: bold;
+    color: #fff989;
+    font-size: 500%;
+}
+
+
+.gameTitle {
+    margin-top: 6em;
+    margin-bottom: 3em;
+}
+
+.title {
+    font-size: 600%;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.content {
+    min-height: 100%;
+    display: 100%;
+    text-align: center;
+    color: white;
+}
+
+.col-movie {
+    width: 40%;
+    text-align: center;
+    color: #fff;
+}
+
+.col-versus {
+    width: 15%;
+    text-align: center;
+    color: #fff;
+}
+
+.row {
+    margin-top: 10em;
+    height: 200%;
+    display: 100%;
+}
+
+.content-game1 {
+    padding-top: 3em;
+    padding-bottom: 1em;
+    text-align: center;
+    color: #fff;
+}
+
+.content-game2 {
+    padding-top: 3em;
+    text-align: center;
+    color: #fff;
+}
+
+.score {
+    font-size: 200%;
+    font-weight: bold;
+    color: #fff;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+h1 {
+    color: #fff989;
+    font-size: 400%;
+}
+
+h2 {
+    color: white;
+    font-size: 200%;
+}
+
+h3 {
+    color: white;
+    font-size: 100%;
+}
+
+@media (max-width: 1370px) {
+
+    .container-fluid {
+        padding: 1em;
+    }
+
+    .card-deck {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .logo {
+        width: 80%;
+    }
+
+    .categoryChoose { 
+        font-size: 1em;
+    }
+
+    .card-title {
+        font-size: 200%;
+        margin-left: 10px;
+    }  
+
+    .card {
+        width: 100%;
+        margin: 0;
+    }
+
+    .card-vote {
+        font-weight: bold;
+        color: #fff989;
+        font-size: 300%;
+        margin: 0;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .vs {
+        margin: 20px;
+    }
+
+    .card-text {
+        padding: 0;
+        font-size: 110%;
+    }
+
+    .card-title {
+        padding: 0;
+    }
+
+    
+}

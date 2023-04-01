@@ -1,0 +1,93 @@
+<!-- Before Start -->
+<div *ngIf="isMainPageActive" class="content">
+  <div class="gameTitle">
+    <img src="assets/logo.png" class="logo">
+  </div>
+  <!-- Player can choose which category they want to play with (vote average, popularity, run time, revenue) -->
+  <p class="categoryChoose">Choose which category you want to play with:</p>
+  <button (click)="voteAverageGame()" type="button" class="btn btn-lg btn-success m-2">Vote average</button>
+  <button (click)="popularityGame()" type="button" class="btn btn-lg btn-success m-2">Popularity</button>
+  <button (click)="runTimeGame()" type="button" class="btn btn-lg btn-success m-2">Run time</button>
+  <button (click)="revenueGame()" type="button" class="btn btn-lg btn-success m-2">Revenue</button>
+</div>
+
+<!-- Picked Vote Average -->
+<div class="container-fluid" *ngIf="isGameActive">
+  <div class="card-deck text-center">
+    <!-- Left Movie -->
+    <div class="card movie">
+      <div class="card-body">
+        <p class="card-title">"{{title1}}"</p>
+        <p *ngIf="isVoteAverageActive" class="card-text">VOTE AVERAGE IS:</p>
+        <p *ngIf="isPopularityActive" class="card-text">POPULARITY IS:</p>
+        <p *ngIf="isRunTimeActive" class="card-text">RUN TIME IS:</p>
+        <p *ngIf="isRevenueActive" class="card-text">REVENUE IS:</p>
+        <p class="card-vote" *ngIf="isVoteAverageActive">{{voteAverage1}}</p>
+        <p class="card-vote" *ngIf="isPopularityActive">{{popularity1}}</p>
+        <p class="card-vote" *ngIf="isRunTimeActive">{{runTime1}}</p>
+        <p class="card-vote" *ngIf="isRevenueActive">{{revenue1}}</p>
+      </div>
+    </div>
+    <!-- VS -->
+    <div class="card vs">
+      <div class="card-body">
+        <img class="card-text" src="assets/vs-logo.png" alt="logo" height="100px">
+      </div>
+    </div>
+    <!-- Right Movie -->
+    <div class="card movie">
+      <div class="card-body">
+        <p class="card-title">"{{title2}}"</p>
+        <p *ngIf="isVoteAverageActive" class="card-text">VOTE AVERAGE IS:</p>
+        <p *ngIf="isPopularityActive" class="card-text">POPULARITY IS:</p>
+        <p *ngIf="isRunTimeActive" class="card-text">RUN TIME IS:</p>
+        <p *ngIf="isRevenueActive" class="card-text">REVENUE IS:</p>
+        <p *ngIf="isAnswered && isVoteAverageActive" class="card-vote animate__animated animate__zoomIn">{{voteAverage2}}</p>
+        <p *ngIf="isAnswered && isPopularityActive" class="card-vote animate__animated animate__zoomIn">{{popularity2}}</p>
+        <p *ngIf="isAnswered && isRunTimeActive" class="card-vote animate__animated animate__zoomIn">{{runTime2}}</p>
+        <p *ngIf="isAnswered && isRevenueActive" class="card-vote animate__animated animate__zoomIn">{{revenue2}}</p>
+        <div *ngIf="!isAnswered" class="mt-3"><button (click)="higher()" type="button"
+            class="btn btn-lg btn-danger">Higher <i class="fa fa-arrow-up"></i></button></div>
+        <div *ngIf="!isAnswered" class="mt-3"><button (click)="lower()" type="button"
+            class="btn btn-lg btn-success">Lower <i class="fa fa-arrow-down"></i></button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-deck text-center">
+    <!-- Score -->
+    <div class="card">
+      <div class="card-body">
+        <div class="score">Score: {{score}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-deck text-center">
+    <!-- Pick New Game Option -->
+    <div class="card">
+      <div class="card-body">
+        <p class="m-1">Change which category you want to play with:</p>
+          <button type="button" class="btn btn-sm btn-info m-1" (click)="voteAverageGame()">vote average</button>
+          <button type="button" class="btn btn-sm btn-info m-1" (click)="popularityGame()">popularity</button>
+          <button type="button" class="btn btn-sm btn-info m-1" (click)="runTimeGame()">run time</button>
+          <button type="button" class="btn btn-sm btn-info m-1" (click)="revenueGame()">revenue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Game Over -->
+<div *ngIf="isGameOver" class="content">
+  <div class="gameTitle">
+    <div class="card-title">Game over!</div>
+    <div class="card-text">You score:</div>
+    <div class="card-vote">{{ score }}</div>
+  </div>
+  <!-- Player can choose which category they want to play with (vote average, popularity, run time, revenue) -->
+  <p style="color: white; font-weight: bold; font-size: 1.5em;">Play again:</p>
+  <button (click)="voteAverageGame()" type="button" class="btn btn-lg btn-success m-2">Vote average</button>
+  <button (click)="popularityGame()" type="button" class="btn btn-lg btn-success m-2">Popularity</button>
+  <button (click)="runTimeGame()" type="button" class="btn btn-lg btn-success m-2">Run time</button>
+  <button (click)="revenueGame()" type="button" class="btn btn-lg btn-success m-2">Revenue</button>
+</div>
