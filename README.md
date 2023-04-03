@@ -1,7 +1,5 @@
 # Movie Game App
 
-This project is hosted here: http://movie-frontend.s3-website.eu-north-1.amazonaws.com/
-
 ## Backend
 ### Setting up Spring Boot application.
 
